@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortening Service</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>URL Shortening Service</h1>
+
+        <div class="form-section">
+            <h2>Create Short URL</h2>
+            <input type="text" id="longUrlInput" placeholder="Enter long URL">
+            <button id="createButton">Create Short URL</button>
+        </div>
+
+        <div class="result-section">
+            <h2>Result</h2>
+            <div id="result"></div>
+        </div>
+
+        <div class="retrieve-section">
+            <h2>Retrieve Original URL</h2>
+            <input type="text" id="shortCodeInput" placeholder="Enter short code">
+            <button id="retrieveButton">Retrieve Original URL</button>
+        </div>
+
+        <div class="update-section">
+            <h2>Update Short URL</h2>
+            <input type="text" id="updateShortCodeInput" placeholder="Enter short code">
+            <input type="text" id="updateLongUrlInput" placeholder="Enter new long URL">
+            <button id="updateButton">Update Short URL</button>
+        </div>
+
+        <div class="delete-section">
+            <h2>Delete Short URL</h2>
+            <input type="text" id="deleteShortCodeInput" placeholder="Enter short code">
+            <button id="deleteButton">Delete Short URL</button>
+        </div>
+
+        <div class="stats-section">
+            <h2>Get URL Statistics</h2>
+            <input type="text" id="statsShortCodeInput" placeholder="Enter short code">
+            <button id="statsButton">Get Statistics</button>
+        </div>
+
+        <div class="output-section">
+            <h2>Output</h2>
+            <div id="output"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

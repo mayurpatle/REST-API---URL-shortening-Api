@@ -12,6 +12,10 @@ const urlSchema = new mongoose.Schema({
     unique: true,
     trim: true,
   },
+  shorturl : {
+    type :  String    , 
+    required : true   
+  }, 
   accessCount: {
     type: Number,
     default: 0,
