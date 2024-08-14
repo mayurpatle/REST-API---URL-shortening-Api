@@ -60,7 +60,7 @@ const getOriginalUrl = async (req, res) => {
         await urlDoc.save();
 
         // Redirect to the original URL
-        res.send(urlDoc.url);
+        res.status(201).json(urlDoc.url);
     } catch (error) {
         console.error('Error retrieving original URL:', error.message);
         res.status(500).json({ message: 'Server error', error: error.message });

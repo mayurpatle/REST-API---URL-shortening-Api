@@ -25,10 +25,15 @@ const createShortUrl = async () => {
 const retrieveOriginalUrl = async () => {
     const shortCode = document.getElementById('shortCodeInput').value;
     try {
-        const response = await fetch(`${apiUrl}/${shortCode}`);
+        const response = await fetch(`${apiUrl}/${shortCode}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
         const data = await response.json();
-        if (response.status === 200) {
-            document.getElementById('result').innerText = `Original URL: ${data.url}`;
+        if (response.status === 201) {
+            document.getElementById('result').innerText = `Original URL: ${data}`;
             document.getElementById('output').innerText = JSON.stringify(data, null, 2);
         } else {
             document.getElementById('result').innerText = 'Short URL not found';
@@ -86,7 +91,9 @@ const deleteShortUrl = async () => {
 const getUrlStatistics = async () => {
     const shortCode = document.getElementById('statsShortCodeInput').value;
     try {
-        const response = await fetch(`${apiUrl}/${shortCode}/stats`);
+        const response = await fetch(`${apiUrl}/${shortCode}/stats` , {
+            method: 'GET'
+        });
         const data = await response.json();
         if (response.status === 200) {
             document.getElementById('result').innerText = `URL Statistics: ${data.accessCount} accesses`;
